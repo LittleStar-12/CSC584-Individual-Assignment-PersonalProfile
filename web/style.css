@@ -1,0 +1,241 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Author     : nurna
+*/
+
+
+/* Define reusable colour variables for the website */
+:root {
+    --bg-gradient: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%);
+    --card-bg: #ffffff;
+    --primary: #db2777; /* Deep pink / Magenta */
+    --primary-hover: #be185d;
+    --secondary-btn: #f472b6; /* Lighter pink for the back button */
+    --secondary-btn-hover: #ec4899;
+    --text-main: #2f1e29;
+    --text-muted: #9d174d;
+    --border: #fbcfe8;
+    --focus-ring: rgba(219, 39, 119, 0.15);
+}
+
+/* General page layout and background styling */
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* Main container for the profile form and profile display */
+.container {
+    background: var(--card-bg);
+    width: 100%;
+    max-width: 550px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px -5px rgba(219, 39, 119, 0.1), 0 8px 10px -6px rgba(219, 39, 119, 0.05);
+    border: 1px solid rgba(251, 207, 232, 0.5);
+}
+
+
+/* Page heading and description styling */
+.header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0 0 8px 0;
+}
+
+.header p {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* Arrange form fields vertically with spacing */
+.form-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Arrange each form group vertically */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styling for form labels */
+label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 6px;
+}
+
+/* Styling for text fields, email fields and text areas */
+input[type="text"],
+input[type="email"],
+textarea {
+    font-family: inherit;
+    font-size: 15px;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background-color: #fffbfe;
+    color: var(--text-main);
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Highlight input fields when they are selected */
+input:focus, textarea:focus {
+    background-color: #ffffff;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px var(--focus-ring);
+    outline: none;
+}
+
+/* Allow text areas to be resized vertically */
+textarea {
+    resize: vertical;
+}
+
+/* Main submit button styling */
+button {
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: var(--primary);
+    border: none;
+    border-radius: 10px;
+    padding: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Change button colour when the mouse hovers over it */
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+
+/* Add a slight shrinking effect when the button is clicked */
+button:active {
+    transform: scale(0.98);
+}
+
+/* Arrange profile information vertically with spacing */
+.profile-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;          
+    margin-bottom: 20px; 
+}
+
+/* Style each individual profile information card */
+.profile-card-item {
+    background-color: #fff5f7;
+    padding: 10px 14px; 
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
+
+/* Style the labels inside each profile card */
+.profile-card-item label {
+    font-size: 10.5px;  
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--text-muted);
+    margin-bottom: 2px; 
+    display: inline-block;
+}
+
+/* Style the submitted profile information */
+.profile-card-item p {
+    font-size: 14.5px;  
+    font-weight: 500;
+    color: var(--text-main);
+    margin: 0;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+/* Style the back button */
+.back-btn-full {
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: var(--secondary-btn);
+    border: none;
+    border-radius: 10px;
+    padding: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+/* Change back button colour when hovered */
+.back-btn-full:hover {
+    background-color: var(--secondary-btn-hover);
+    color: #ffffff;
+}
+
+/* Add a slight shrinking effect when the back button is clicked */
+.back-btn-full:active {
+    transform: scale(0.98);
+}
+
+/* Avatar icon container alignment and spacing */
+.avatar-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+/* Style the circular background surrounding the avatar */
+.profile-avatar {
+    width: 90px;
+    height: 90px;
+    background-color: #fce7f3; /* Soft pink circle background */
+    border: 3px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary); /* Magenta color for the icon */
+    box-shadow: 0 4px 10px rgba(219, 39, 119, 0.1);
+}
+
+/* Set the size of the avatar SVG icon */
+.profile-avatar svg {
+    width: 45px;
+    height: 45px;
+}
+
